@@ -44,24 +44,31 @@ const WeatherApp = () => {
     ) {
       setWicon(night_icon);
       // if(nightcontainer){nightcontainer.setAttribute("style", "background-image: url('nightbg.png')")}
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #160064 0%, #5b0273 100%)";}
+      if(nightcontainer){nightcontainer.style.backgroundColor = "linear-gradient(180deg, #ffff 0%, #5b0273 100%)";}
     } else if (data.weather[0].icon === "01d") {
       setWicon(clear_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
+      if(nightcontainer){nightcontainer.style.backgroundColor = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "02d") {
       setWicon(cloud_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "03d") {
       setWicon(drizzle_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "04d") {
       setWicon(drizzle_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "09d") {
       setWicon(rain_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "10d") {
       setWicon(rain_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "13d") {
       setWicon(snow_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else {
       setWicon(clear_icon);
+      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     }
   };
   return (
