@@ -6,7 +6,7 @@
     margin-top: 30px;
     border-radius: 12px;
     /* border-style: groove; */
-    /* background-image: linear-gradient(180deg, #160064 0%, #5b0273 100%); */
+    background-image: linear-gradient(180deg, #160064 0%, #5b0273 100%);
     /* background-image: url("after_noonbg.png"); */
     object-fit: fill;
 }
