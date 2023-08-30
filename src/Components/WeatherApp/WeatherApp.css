@@ -10,7 +10,6 @@
     /* background-image: url("after_noonbg.png"); */
     object-fit: fill;
 }
-
 .abhay {
     display: flex !important;
     justify-content: center !important;
@@ -26,7 +25,7 @@ input {
     border: 10px;
     outline: none;
     border-radius: 40px;
-    padding-left: 40px;
+    padding-left: 50px;
     color: #626262;
     font-size: 20px;
     font-weight: 400;
@@ -37,8 +36,8 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 68px;
-    height: 68px;
+    width: 58px;
+    height: 58px;
 
     /* margin-bottom: 40px; */
     background: rgb(255, 255, 255);
@@ -53,15 +52,13 @@ input {
 }
 .weather-image img{
     width: 160px;
-
 }
-
 .weather-temp {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 400;
 }
 
@@ -69,24 +66,40 @@ input {
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 400;
 }
-
+.weather-info {
+    display: flex;
+    justify-content: center;
+    color: rgb(153, 153, 153);
+    font-size: 30px;
+    font-weight: 300;
+}
 .data-container {
-    margin-top: 50px;
+    margin-top: 20px;
     color: white;
     display: flex;
     justify-content: center;
 }
-
 .element {
     margin: auto;
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
-
+.clockk{
+    display: flex;
+    justify-content: left;
+    color: #b0b0b0;
+    margin-top: 20px;
+    margin-right: 15px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.time{
+    margin-right: 10px;
+}
 .data {
     font-size: 23px;
     font-weight: 500;

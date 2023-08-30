@@ -12,8 +12,16 @@ import rain_icon from "../Assests/rain.png";
 import snow_icon from "../Assests/snow.png";
 import humidity_icon from "../Assests/humidity.png";
 import wind_icon from "../Assests/wind.png";
-var nightcontainer=document.querySelector(".container");
+//var nightcontainer = document.querySelector(".container");
+// const Clock=()=>{
+//   let time=new Date().toLocaleTimeString();
+//   return(
+//     {time}
+//   )
+// }
 const WeatherApp = () => {
+  const time = new Date().toTimeString();
+  const date = new Date().toDateString();
   let api_key = "dd94f859a0e52d6e4767fddf735f04a7";
   const [wicon, setWicon] = useState(cloud_icon);
   const search = async () => {
@@ -28,6 +36,8 @@ const WeatherApp = () => {
     const wind = document.getElementsByClassName("wind-speed");
     const temperature = document.getElementsByClassName("weather-temp");
     const location = document.getElementsByClassName("weather-location");
+    const info = document.getElementsByClassName("weather-info");
+    info[0].innerHTML = data.weather[0].description;
     humidity[0].innerHTML = data.main.humidity + " %";
     wind[0].innerHTML = data.wind.speed + " km/hr";
     // °°°°°°°°
@@ -44,35 +54,34 @@ const WeatherApp = () => {
     ) {
       setWicon(night_icon);
       // if(nightcontainer){nightcontainer.setAttribute("style", "background-image: url('nightbg.png')")}
-      if(nightcontainer){nightcontainer.style.backgroundColor = "linear-gradient(180deg, #ffff 0%, #5b0273 100%)";}
+      // if (nightcontainer) {
+      //   nightcontainer.style.backgroundColor =
+      //     "linear-gradient(180deg, #ffff 0%, #5b0273 100%)";
+      // }
     } else if (data.weather[0].icon === "01d") {
       setWicon(clear_icon);
-      if(nightcontainer){nightcontainer.style.backgroundColor = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
+      // if (nightcontainer) {
+      //   nightcontainer.style.backgroundColor =
+      //     "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";
+      // }
     } else if (data.weather[0].icon === "02d") {
       setWicon(cloud_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "03d") {
       setWicon(drizzle_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "04d") {
       setWicon(drizzle_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "09d") {
       setWicon(rain_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "10d") {
       setWicon(rain_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else if (data.weather[0].icon === "13d") {
       setWicon(snow_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     } else {
       setWicon(clear_icon);
-      if(nightcontainer){nightcontainer.style.background = "linear-gradient(180deg, #eb6e00 0%, #f2c94c 100%)";}
     }
   };
   return (
-    <div id="night_con" className="container" >
+    <div id="night_con" className="container">
       <div
         classname="abhay"
         style={{
@@ -98,6 +107,7 @@ const WeatherApp = () => {
       </div>
       <div className="weather-temp">∞</div>
       <div className="weather-location">!search a city!</div>
+      <div className="weather-info"></div>
       <br />
       <div className="data-container">
         <div className="element">
@@ -114,6 +124,10 @@ const WeatherApp = () => {
             <div className="text">Wind speed</div>
           </div>
         </div>
+      </div>
+      <div className="clockk">
+        <div className="time">{time}</div>
+        <div className="time">{date}</div>
       </div>
     </div>
   );
