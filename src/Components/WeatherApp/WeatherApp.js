@@ -44,6 +44,8 @@ const WeatherApp = () => {
       temperature[0].innerHTML = "";
       location[0].innerHTML = "Invalid city name !";
       info[0].innerHTML = "error 404";
+      humidity[0].innerHTML = "0%";
+      wind[0].innerHTML = "0km/hr";
     }
     else
     {
