@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import React from 'react';
 import "./WeatherApp.css";
 import night_icon from "../Assests/night3.png";
 // import nightbg from "./nightbg.png";
 // import daybg from "./after_noonbg.png";
 import search_icon from "../Assests/search.png";
+import error_icon from "../Assests/warning-sign.png";
 import clear_icon from "../Assests/clear.png";
 import cloud_icon from "../Assests/cloud.png";
 import drizzle_icon from "../Assests/drizzle.png";
@@ -37,6 +38,15 @@ const WeatherApp = () => {
     const temperature = document.getElementsByClassName("weather-temp");
     const location = document.getElementsByClassName("weather-location");
     const info = document.getElementsByClassName("weather-info");
+    if(data.cod==="404")
+    {
+      setWicon(error_icon);
+      temperature[0].innerHTML = "";
+      location[0].innerHTML = "Invalid city name !";
+      info[0].innerHTML = "error 404";
+    }
+    else
+    {
     info[0].innerHTML = data.weather[0].description;
     humidity[0].innerHTML = data.main.humidity + " %";
     wind[0].innerHTML = data.wind.speed + " km/hr";
@@ -50,7 +60,8 @@ const WeatherApp = () => {
       data.weather[0].icon === "09n" ||
       data.weather[0].icon === "02n" ||
       data.weather[0].icon === "04n" ||
-      data.weather[0].icon === "03n"
+      data.weather[0].icon === "03n" ||
+      data.weather[0].icon === "50n"
     ) {
       setWicon(night_icon);
       // if(nightcontainer){nightcontainer.setAttribute("style", "background-image: url('nightbg.png')")}
@@ -79,7 +90,11 @@ const WeatherApp = () => {
     } else {
       setWicon(clear_icon);
     }
+  }
   };
+  useEffect(()=>{
+    document.title=`${date}`;
+  });
   return (
     <div id="night_con" className="container">
       <div
