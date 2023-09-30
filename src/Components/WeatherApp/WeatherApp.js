@@ -45,13 +45,13 @@ const WeatherApp = () => {
       location[0].innerHTML = "Invalid city name !";
       info[0].innerHTML = "error 404";
       humidity[0].innerHTML = "0%";
-      wind[0].innerHTML = "0km/hr";
+      wind[0].innerHTML = "0m/s";
     }
     else
     {
     info[0].innerHTML = data.weather[0].description;
     humidity[0].innerHTML = data.main.humidity + " %";
-    wind[0].innerHTML = data.wind.speed + " km/hr";
+    wind[0].innerHTML = data.wind.speed + " m/s";
     // °°°°°°°°
     temperature[0].innerHTML = data.main.temp + " °C";
     location[0].innerHTML = data.name;
@@ -137,7 +137,7 @@ const WeatherApp = () => {
         <div className="element">
           <img src={wind_icon} alt="" className="icon" />
           <div className="data">
-            <div className="wind-speed">0km/hr</div>
+            <div className="wind-speed">0m/s</div>
             <div className="text">Wind speed</div>
           </div>
         </div>
