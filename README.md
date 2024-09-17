@@ -1,9 +1,11 @@
-# Getting Started with Create React App
+# Search your City !
+
+## LIVE NOW :
+https://abhay-59.github.io/weatherapp2/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
+## TO RUN THE PROJECT AT YOUR LOCAL MACHINE :
 In the project directory, you can run:
 
 ### `npm start`
